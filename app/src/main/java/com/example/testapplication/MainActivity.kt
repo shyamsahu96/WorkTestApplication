@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         tvMenuTitle = findViewById(R.id.tvMenuTitle)
         myRv = findViewById(R.id.rvItems)
-        val gm: GridLayoutManager =
+        /*val gm: GridLayoutManager =
             GridLayoutManager(this, 6, LinearLayoutManager.HORIZONTAL, false)
         myRv.layoutManager = gm
         myAdapter = MyAdapter(6)
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 myRv.context,
                 DividerItemDecoration.HORIZONTAL
             )
-        )
+        )*/
 
         daggerComponentTest =
             DaggerComponentTest.builder().mealAPIURL(getString(R.string.meal_api)).build()
