@@ -6,6 +6,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -18,7 +21,6 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
-import org.json.JSONArray
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         //window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
         tvMenuTitle = findViewById(R.id.tvMenuTitle)
-        /*myRv = findViewById(R.id.rvItems)
+        myRv = findViewById(R.id.rvItems)
         val gm: GridLayoutManager =
             GridLayoutManager(this, 6, LinearLayoutManager.HORIZONTAL, false)
         myRv.layoutManager = gm
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 myRv.context,
                 DividerItemDecoration.HORIZONTAL
             )
-        )*/
+        )
 
         daggerComponentTest =
             DaggerComponentTest.builder().mealAPIURL(getString(R.string.meal_api)).build()
@@ -125,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                 val result: String = requestFuture.get(30, TimeUnit.SECONDS)
                 Log.d(TAG, "String Result: " + result)
             } catch (e: Exception) {
-                Log.d(TAG, "Exception: " + e.message+"\n"+e)
+                Log.d(TAG, "Exception: " + e.message + "\n" + e)
             }
         }
     }
