@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Test Application</string>
+
+    <string name="meal_api" translatable="false">https://jsonplaceholder.typicode.com/</string>
+</resources>

@@ -1,0 +1,2 @@
+include ':app', ':amazon-pay-3.6.2'
+rootProject.name='Test Application'
